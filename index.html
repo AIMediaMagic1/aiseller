@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEMSA — Analizador de Licitaciones</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>SEMSA <span>AI Licitaciones</span></h1>
+      <p>Sube el PDF de una base de licitación y obtén el análisis completo en segundos</p>
+    </header>
+
+    <section id="upload-section">
+      <div class="upload-zone" id="drop-zone">
+        <div class="upload-icon">📄</div>
+        <p><strong>Haz clic o arrastra el PDF aquí</strong></p>
+        <p class="upload-sub">Bases de licitación en formato PDF · máx. 20 MB</p>
+        <input type="file" id="file-input" accept=".pdf">
+      </div>
+      <div class="file-info" id="file-info">
+        <span class="file-icon">📎</span>
+        <span class="file-name" id="file-name-text"></span>
+        <span class="file-size" id="file-size-text"></span>
+      </div>
+      <div class="error-msg" id="error-msg"></div>
+      <button class="btn-primary" id="btn-analyze" disabled>
+        Analizar licitación →
+      </button>
+    </section>
+
+    <section id="loading-section" class="hidden">
+      <div class="spinner"></div>
+      <p id="loading-text">Leyendo bases de licitación...</p>
+    </section>
+
+    <section id="results-section" class="hidden">
+      <div class="verdict-card" id="verdict-card">
+        <div class="verdict-label">Veredicto SEMSA</div>
+        <div class="verdict-text" id="verdict-text"></div>
+      </div>
+
+      <div class="result-card">
+        <div class="card-label">Resumen ejecutivo</div>
+        <div class="card-content" id="resumen"></div>
+      </div>
+
+      <div class="result-card">
+        <div class="card-label">Requisitos técnicos obligatorios</div>
+        <div class="card-content" id="requisitos"></div>
+      </div>
+
+      <div class="result-card">
+        <div class="card-label">Riesgos detectados</div>
+        <div class="card-content" id="riesgos"></div>
+      </div>
+
+      <div class="result-card">
+        <div class="card-label">Checklist de cumplimiento</div>
+        <div class="card-content" id="checklist"></div>
+      </div>
+
+      <button class="btn-secondary" id="btn-reset">Analizar otra licitación</button>
+    </section>
+  </div>
+
+  <script src="/static/js/main.js"></script>
+</body>
+</html>
